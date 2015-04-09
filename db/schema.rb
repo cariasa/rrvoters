@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150409160709) do
+ActiveRecord::Schema.define(version: 20150409161643) do
 
   create_table "barrio_colonia", force: :cascade do |t|
     t.string   "nombre_colonia"
@@ -23,11 +23,24 @@ ActiveRecord::Schema.define(version: 20150409160709) do
 
   add_index "barrio_colonia", ["municipio_id"], name: "index_barrio_colonia_on_municipio_id"
 
+  create_table "departamentos", force: :cascade do |t|
+    t.integer  "codigo_departamento"
+    t.string   "nombre_departamento"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+  end
+
   create_table "departmentos", force: :cascade do |t|
     t.integer  "codigo_departamento"
     t.string   "nombre_departamento"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
+  end
+
+  create_table "destroys", force: :cascade do |t|
+    t.string   "Departmento"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "municipios", force: :cascade do |t|

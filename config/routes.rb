@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
+  resources :departamentos
+
   resources :personas
 
   resources :barrio_colonia
 
   resources :municipios
-
-  resources :departmentos
 
   root 'static_pages#home'
 
