@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :municipios
+
+  resources :departmentos
+
   root 'static_pages#home'
 
   get 'static_pages/help'

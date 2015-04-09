@@ -1,0 +1,33 @@
+<%= form_for(@municipio) do |f| %>
+  <% if @municipio.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@municipio.errors.count, "error") %> prohibited this municipio from being saved:</h2>
+
+      <ul>
+      <% @municipio.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :codigo_municipio %><br>
+    <%= f.number_field :codigo_municipio %>
+  </div>
+  <div class="field">
+    <%= f.label :nombre_municipio %><br>
+    <%= f.text_field :nombre_municipio %>
+  </div>
+  <div class="field">
+    <%= f.label :tipo_municipio %><br>
+    <%= f.text_field :tipo_municipio %>
+  </div>
+  <div class="field">
+    <%= f.label :departamento_id %><br>
+    <%= f.text_field :departamento_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
