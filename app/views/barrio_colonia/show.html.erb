@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre colonia:</strong>
+  <%= @barrio_colonium.nombre_colonia %>
+</p>
+
+<p>
+  <strong>Tipo:</strong>
+  <%= @barrio_colonium.tipo %>
+</p>
+
+<p>
+  <strong>Municipio:</strong>
+  <%= @barrio_colonium.municipio %>
+</p>
+
+<%= link_to 'Edit', edit_barrio_colonium_path(@barrio_colonium) %> |
+<%= link_to 'Back', barrio_colonia_path %>

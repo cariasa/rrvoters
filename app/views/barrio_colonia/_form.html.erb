@@ -1,0 +1,29 @@
+<%= form_for(@barrio_colonium) do |f| %>
+  <% if @barrio_colonium.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@barrio_colonium.errors.count, "error") %> prohibited this barrio_colonium from being saved:</h2>
+
+      <ul>
+      <% @barrio_colonium.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nombre_colonia %><br>
+    <%= f.text_field :nombre_colonia %>
+  </div>
+  <div class="field">
+    <%= f.label :tipo %><br>
+    <%= f.text_field :tipo %>
+  </div>
+  <div class="field">
+    <%= f.label :municipio_id %><br>
+    <%= f.text_field :municipio_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

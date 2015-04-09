@@ -1,0 +1,2 @@
+module BarrioColoniaHelper
+end

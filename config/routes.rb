@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :personas
+
+  resources :barrio_colonia
+
   resources :municipios
 
   resources :departmentos

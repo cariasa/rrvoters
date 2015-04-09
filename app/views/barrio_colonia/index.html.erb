@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Barrio Colonia</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre colonia</th>
+      <th>Tipo</th>
+      <th>Municipio</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @barrio_colonia.each do |barrio_colonium| %>
+      <tr>
+        <td><%= barrio_colonium.nombre_colonia %></td>
+        <td><%= barrio_colonium.tipo %></td>
+        <td><%= barrio_colonium.municipio %></td>
+        <td><%= link_to 'Show', barrio_colonium %></td>
+        <td><%= link_to 'Edit', edit_barrio_colonium_path(barrio_colonium) %></td>
+        <td><%= link_to 'Destroy', barrio_colonium, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Barrio colonium', new_barrio_colonium_path %>
