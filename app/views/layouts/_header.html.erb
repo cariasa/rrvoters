@@ -6,7 +6,16 @@
         <li><%= link_to "Inicio",   root_path %></li>
         <li><%= link_to "Ayuda",   help_path %></li>
         <li><%= link_to "Acerca", about_path %></li>
-        <li><%= link_to "Ingresar", '#' %></li>
+
+        <% if user_signed_in? %>
+          
+          <li><%= link_to "Editar perfil: #{current_user.email}", edit_user_registration_path  %> </li>
+          <li><%= link_to "Salir", destroy_user_session_path, method: :delete  %> </li>
+        <% else %>
+          <li><%= link_to "Crear cuenta", new_user_registration_path   %> </li>
+          <li><%= link_to "Ingresar", new_user_session_path   %> </li>
+        <% end %>
+
       </ul>
     </nav>
   </div>
