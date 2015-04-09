@@ -1,15 +1,13 @@
 Rails.application.routes.draw do
   resources :departamentos
-
   resources :personas
-
   resources :barrio_colonia
-
   resources :municipios
 
   root 'static_pages#home'
-
-  get 'static_pages/help'
+  get 'help'    =>  'static_pages#help'
+  get 'about'   =>  'static_pages#about'
+  get 'contact' =>  'static_pages#contact'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

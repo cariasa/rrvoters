@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150409161643) do
+ActiveRecord::Schema.define(version: 20150409170643) do
 
   create_table "barrio_colonia", force: :cascade do |t|
     t.string   "nombre_colonia"
@@ -46,7 +46,6 @@ ActiveRecord::Schema.define(version: 20150409161643) do
   create_table "municipios", force: :cascade do |t|
     t.integer  "codigo_municipio"
     t.string   "nombre_municipio"
-    t.string   "tipo_municipio"
     t.integer  "departamento_id"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false

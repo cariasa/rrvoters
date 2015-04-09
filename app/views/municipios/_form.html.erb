@@ -20,12 +20,8 @@
     <%= f.text_field :nombre_municipio %>
   </div>
   <div class="field">
-    <%= f.label :tipo_municipio %><br>
-    <%= f.text_field :tipo_municipio %>
-  </div>
-  <div class="field">
     <%= f.label :departamento_id %><br>
-    <%= f.text_field :departamento_id %>
+    <%= f.collection_select  :departamento_id, Departamento.all, :id, :nombre_departamento %>
   </div>
   <div class="actions">
     <%= f.submit %>
