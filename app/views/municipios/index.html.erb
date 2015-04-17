@@ -18,9 +18,9 @@
         <td><%= municipio.codigo_municipio %></td>
         <td><%= municipio.nombre_municipio %></td>
         <td><%= municipio.departamento.nombre_departamento %></td>
-        <td><%= link_to 'Show', municipio %></td>
-        <td><%= link_to 'Edit', edit_municipio_path(municipio) %></td>
-        <td><%= link_to 'Destroy', municipio, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', departamento_municipios_path(@departamento) %></td>
+        <td><%= link_to 'Edit', edit_departamento_municipio_path(@departamento, municipio) %></td>
+        <td><%= link_to 'Destroy', departamento_municipios_path(@departamento), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Municipio', new_municipio_path %>
+<%= link_to 'New Municipio', new_departamento_municipio_path(@departamento) %>

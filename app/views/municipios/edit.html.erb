@@ -2,5 +2,5 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @municipio %> |
-<%= link_to 'Back', municipios_path %>
+<%= link_to 'Show', [@departamento, @municipio] %> |
+<%= link_to 'Back', departamento_municipios_path(@departamento) %>

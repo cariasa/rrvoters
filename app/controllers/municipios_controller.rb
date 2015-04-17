@@ -1,15 +1,27 @@
 class MunicipiosController < ApplicationController
   before_action :set_municipio, only: [:show, :edit, :update, :destroy]
+  before_filter :get_departamento
+  
+  def get_departamento
+    @departamento = Departamento.find(params[:departamento_id])
+  end
 
   # GET /municipios
   # GET /municipios.json
   def index
-    @municipios = Municipio.all
+    if params[:departamento_id]
+      @municipios = @departamento.municipios
+    else
+      @municipios = Municipio.all
+    end
+
+    
   end
 
   # GET /municipios/1
   # GET /municipios/1.json
   def show
+    @municipio = @departamento.municipios.find(params[:id])
   end
 
   # GET /municipios/new

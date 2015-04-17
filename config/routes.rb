@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :departamentos
+  resources :departamentos do
+    resources :municipios
+  end
   resources :personas
   resources :barrio_colonia
-  resources :municipios
 
   root 'static_pages#home'
   get 'help'    =>  'static_pages#help'

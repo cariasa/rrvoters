@@ -1,4 +1,4 @@
-<%= form_for(@municipio) do |f| %>
+<%= form_for([@departamento, @municipio]) do |f| %>
   <% if @municipio.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@municipio.errors.count, "error") %> prohibited this municipio from being saved:</h2>
