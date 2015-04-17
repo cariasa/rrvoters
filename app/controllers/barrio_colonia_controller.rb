@@ -61,6 +61,18 @@ class BarrioColoniaController < ApplicationController
     end
   end
 
+  #To allow for combo boxes
+  def barrio_colonia_list
+    if params[:municipio_id]
+      @barrio_colonia = BarrioColonium.where(municipio_id: params[:municipio_id])
+    else
+      @barrio_colonia = BarrioColonium.all
+    end
+    respond_with(@barrio_colonia) do |format|
+      format.json{render :json => @barrio_colonia.to_json(:only => [:id, :nombre_colonia])}
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_barrio_colonium

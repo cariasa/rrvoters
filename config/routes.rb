@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   get 'about'   =>  'static_pages#about'
   get 'contact' =>  'static_pages#contact'
 
+  post 'barrio_colonia_list'  =>  'barrio_colonia#barrio_colonia_list', as: :barrio_colonia_list
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
