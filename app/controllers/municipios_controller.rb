@@ -1,7 +1,7 @@
 class MunicipiosController < ApplicationController
   before_action :set_municipio, only: [:show, :edit, :update, :destroy]
   before_filter :get_departamento
-  
+
   def get_departamento
     @departamento = Departamento.find(params[:departamento_id])
   end
@@ -36,12 +36,13 @@ class MunicipiosController < ApplicationController
   # POST /municipios
   # POST /municipios.json
   def create
-    @municipio = Municipio.new(municipio_params)
+    #@municipio = Municipio.new(municipio_params)
+    @municipio = @departamento.municipios.new(municipio_params)
 
     respond_to do |format|
       if @municipio.save
-        format.html { redirect_to @municipio, notice: 'Municipio was successfully created.' }
-        format.json { render :show, status: :created, location: @municipio }
+        format.html { redirect_to [@departamento, @municipio], notice: 'Municipio was successfully created.' }
+        format.json { render :show, status: :created, location: [@departamento, @municipio] }
       else
         format.html { render :new }
         format.json { render json: @municipio.errors, status: :unprocessable_entity }
